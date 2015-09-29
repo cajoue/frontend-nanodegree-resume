@@ -40,3 +40,28 @@ $("#header").prepend(formattedName);
 
 // note reverse order of elements in prepend
 // - the bottom one displays at the top.
+
+
+// L1: quiz 4
+
+// Using string methods, convert "audacity" to "Udacity".
+
+/* based on Dave Evans Python challenge
+# Write Python code that prints out Udacity (with a capital U),
+# given the definition of s below.
+s = 'audacity'
+print "U" + s[2: ]
+*/
+
+// capitalize "u" using string[1].toUpperCase()
+// ditch the "au" using string.slice()
+
+var s = "audacity";
+
+var udacityizer = function(s) {
+    s = s[1].toUpperCase() + s.slice(2);
+    return s;
+};
+
+console.log(udacityizer(s));
+
