@@ -56,6 +56,7 @@ print "U" + s[2: ]
 // capitalize "u" using string[1].toUpperCase()
 // ditch the "au" using string.slice()
 
+/*
 var s = "audacity";
 
 var udacityizer = function(s) {
@@ -64,4 +65,56 @@ var udacityizer = function(s) {
 };
 
 console.log(udacityizer(s));
+*/
+
+// L1: Arrays
+
+// var skills = ["awesomeness", "programming", "teaching", "JS"];
+
+// $("#main").append(skills);
+
+// $("#main").append(skills[0]);
+
+// $("#main").append(skills.length);
+
+// L1: quiz 7 - Array Manipulation
+
+var sampleArray = [0,0,7];
+
+/*var incrementLastArrayElement = function(_array) {
+    var newArray = [];
+    // Your code should make newArray equal to an array that has the same
+    // values as _array, but the last number has increased by one.
+
+    // For example:
+    // _array = [1, 2, 3];
+    // turns into:
+    // newArray = [1, 2, 4];
+
+    // Your code goes in here!
+    _array[_array.length - 1] = _array[_array.length - 1] + 1;
+
+    newArray = _array;
+
+    // Don't delete this line!
+    return newArray;
+};
+
+// Did your code work? The line below will tell you!
+console.log(incrementLastArrayElement(sampleArray));
+*/
+// Yes my code above worked. Here's Udacity solution:
+
+function incrementLastArrayElement(_array)  {
+    var newArray = [];
+    newArray = _array.slice(0);  // copies whole _array
+    var lastNumber = newArray.pop();  // returns and removes last item - increment it by 1
+    newArray.push(lastNumber + 1);  // add element back to end of array
+    return newArray;
+}
+
+console.log(incrementLastArrayElement(sampleArray));
+
+
+
 
