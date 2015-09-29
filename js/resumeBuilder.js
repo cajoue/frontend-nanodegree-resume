@@ -79,7 +79,7 @@ console.log(udacityizer(s));
 
 // L1: quiz 7 - Array Manipulation
 
-var sampleArray = [0,0,7];
+// var sampleArray = [0,0,7];
 
 /*var incrementLastArrayElement = function(_array) {
     var newArray = [];
@@ -105,16 +105,44 @@ console.log(incrementLastArrayElement(sampleArray));
 */
 // Yes my code above worked. Here's Udacity solution:
 
-function incrementLastArrayElement(_array)  {
+/*function incrementLastArrayElement(_array)  {
     var newArray = [];
     newArray = _array.slice(0);  // copies whole _array
     var lastNumber = newArray.pop();  // returns and removes last item - increment it by 1
     newArray.push(lastNumber + 1);  // add element back to end of array
     return newArray;
+}*/
+
+// console.log(incrementLastArrayElement(sampleArray));
+
+// L1: quiz 8 - String Manipulation
+
+var name = "AlbERt EINstEiN";
+
+/*function nameChanger(oldName) {
+    var finalName = oldName;
+    // Your code goes here!
+    var space = finalName.indexOf(" ");
+    finalName = finalName.toUpperCase();
+    var partialFirst = finalName.slice(1, space);
+    finalName = finalName.replace(partialFirst, partialFirst.toLowerCase());
+    // Don't delete this line!
+    return finalName;
+};
+
+// Did your code work? The line below will tell you!
+console.log(nameChanger(name));
+*/
+// Yes my code above worked. Here's Udacity solution:
+
+function nameChanger(oldName) {
+    var finalName = oldName;
+    var names = oldName.split(" "); // create array of names by breaking at the space
+    names[1] = names[1].toUpperCase();
+    names[0] = names[0].slice(0,1).toUpperCase() + names[0].slice(1).toLowerCase();
+    finalName = names.join(" ");  // array.join([chars]) will join array elements together using " "
+    return finalName;
 }
 
-console.log(incrementLastArrayElement(sampleArray));
-
-
-
+console.log(nameChanger(name));
 
