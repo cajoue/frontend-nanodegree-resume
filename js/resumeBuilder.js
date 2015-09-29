@@ -22,11 +22,11 @@ This is empty on purpose! Your code to build the resume will go here.
 
 // .replace()ing Placeholder Data in HTML - Resume Header Quiz
 
-var name = "Valerie Yallup";
-var role = "Front-end Web Developer";
+// var name = "Valerie Yallup";
+// var role = "Front-end Web Developer";
 
-var formattedName = HTMLheaderName.replace("%data%", name);
-var formattedRole = HTMLheaderRole.replace("%data%", role);
+// var formattedName = HTMLheaderName.replace("%data%", name);
+// var formattedRole = HTMLheaderRole.replace("%data%", role);
 
 // $("#header").append(formattedName);
 // $("#header").append(formattedRole);
@@ -35,8 +35,8 @@ var formattedRole = HTMLheaderRole.replace("%data%", role);
 // .append() the data will appear after the list - not what we want.
 // Use .prepend() to ensure that name and role appear first.
 
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
+// $("#header").prepend(formattedRole);
+// $("#header").prepend(formattedName);
 
 // note reverse order of elements in prepend
 // - the bottom one displays at the top.
@@ -117,7 +117,7 @@ console.log(incrementLastArrayElement(sampleArray));
 
 // L1: quiz 8 - String Manipulation
 
-var name = "AlbERt EINstEiN";
+// var name = "AlbERt EINstEiN";
 
 /*function nameChanger(oldName) {
     var finalName = oldName;
@@ -134,7 +134,7 @@ var name = "AlbERt EINstEiN";
 console.log(nameChanger(name));
 */
 // Yes my code above worked. Here's Udacity solution:
-
+/*
 function nameChanger(oldName) {
     var finalName = oldName;
     var names = oldName.split(" "); // create array of names by breaking at the space
@@ -145,4 +145,64 @@ function nameChanger(oldName) {
 }
 
 console.log(nameChanger(name));
+*/
+
+// Object Literal Notation
+
+var bio = {
+	"name" : "Valerie Yallup",
+	"role" : "Front-end Web Developer",
+	// this is an object - you can tell by the braces {}
+	"contacts" : {
+		"mobile" : "+41 55 555 55 55",
+		"email" : "valerie@example.com",
+		"github" : "cajoue",
+		"twitter" : "@example",
+		"location" : "Orbe"
+	},
+	"bioPic" : "images/vy_640x640.jpg",
+	"welcomeMsg" : "Salut",
+	// this is an array - you can tell by the square brackets []
+	"skills" : ["HTML", "CSS", "JS", "Responsive Web Design"]
+};
+
+var formattedName = HTMLheaderName.replace("%data%", bio.name);
+var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+// contacts list
+var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+//image
+var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+// welcome
+var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg);
+// skills array
+//var formattedSkills = HTMLskills.replace("%data%", bio.skills.join(", "));  //join array elements together using ", "
+var formattedSkills = HTMLskills.replace("%data%", bio.skills);
+
+$("#header").prepend(formattedRole);
+$("#header").prepend(formattedName);
+
+$("#topContacts").append(formattedMobile);
+$("#topContacts").append(formattedEmail);
+$("#topContacts").append(formattedLocation);
+$("#topContacts").append(formattedGithub);
+$("#topContacts").append(formattedTwitter);
+
+
+$("#header").append(formattedWelcomeMsg);
+$("#header").append(formattedBioPic);
+
+// TODO: loop skills
+$("#header").append(HTMLskillsStart);
+//$("#header").append(formattedSkills);
+// investigate this one some more - so that really understand it.
+// also want to only show skillsStart if there are skills to show.
+// also use var formattedSkills inside loop for continuity.
+for (var skill in bio.skills) {
+	$("#skills:last").append(HTMLskills.replace("%data%", bio.skills[skill]));
+}
+
 
