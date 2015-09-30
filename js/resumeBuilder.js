@@ -150,20 +150,23 @@ console.log(nameChanger(name));
 // Object Literal Notation
 
 var bio = {
-	"name" : "Valerie Yallup",
-	"role" : "Front-end Web Developer",
-	// this is an object - you can tell by the braces {}
-	"contacts" : {
-		"mobile" : "+41 55 555 55 55",
-		"email" : "valerie@example.com",
-		"github" : "cajoue",
-		"twitter" : "@example",
-		"location" : "Orbe"
-	},
-	"bioPic" : "images/vy_640x640.jpg",
-	"welcomeMsg" : "Salut",
-	// this is an array - you can tell by the square brackets []
-	"skills" : ["HTML", "CSS", "JS", "Responsive Web Design"]
+    "name": "Valerie Yallup",
+    "role": "Front-end Web Developer",
+    "contacts": {
+        "mobile": "+41 55 555 55 55",
+        "email": "valerie@example.com",
+        "github": "cajoue",
+        "twitter": "@example",
+        "location": "Orbe, Switzerland"
+    },
+    "bioPic": "images/vy_640x640.jpg",
+    "welcomeMessage": "Salut",
+    "skills": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Responsive Web Design"
+    ]
 };
 
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
@@ -177,10 +180,10 @@ var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 //image
 var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
 // welcome
-var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg);
+var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 // skills array
 //var formattedSkills = HTMLskills.replace("%data%", bio.skills.join(", "));  //join array elements together using ", "
-var formattedSkills = HTMLskills.replace("%data%", bio.skills);
+//var formattedSkills = HTMLskills.replace("%data%", bio.skills);
 
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
@@ -191,18 +194,142 @@ $("#topContacts").append(formattedLocation);
 $("#topContacts").append(formattedGithub);
 $("#topContacts").append(formattedTwitter);
 
-
 $("#header").append(formattedWelcomeMsg);
 $("#header").append(formattedBioPic);
 
 // TODO: loop skills
-$("#header").append(HTMLskillsStart);
-//$("#header").append(formattedSkills);
+// also want to add a new line for each skill like a list.
 // investigate this one some more - so that really understand it.
-// also want to only show skillsStart if there are skills to show.
-// also use var formattedSkills inside loop for continuity.
-for (var skill in bio.skills) {
+/*for (var skill in bio.skills) {
 	$("#skills:last").append(HTMLskills.replace("%data%", bio.skills[skill]));
+}*/
+
+var numberOfSkills = bio.skills.length;
+if (numberOfSkills > 0) {
+	$("#header").append(HTMLskillsStart);
+	for (var i = 0 ; i < numberOfSkills ; i++){
+		var formattedSkills = HTMLskills.replace("%data%", bio.skills[i]);
+		$("#skills").append(formattedSkills);
+	}
 }
 
+/*var work = {};
+// use dot notation for: current job position, employer, years worked, city of business
+work.title = "Executive Assistant and MARCOM Manager";
+work.employer = "ACAMP";
+work.dates = "2008 - 2015";
+work.location = "Edmonton, Canada";
 
+// it appears but didn't look properly formatted :(
+// var formattedWorkTitle = HTMLworkTitle.replace("%data%", work["title"]);
+// $("#workExperience").append(HTMLworkStart);
+// $("#workExperience").append(formattedWorkTitle);
+
+// Udacity answer didn't format or position the property:
+
+$("#main").append(work["title"]);*/
+
+// create new object work using object literal notation (JSON)
+
+var work = {
+    "jobs": [
+        {
+            "employer": "ACAMP",
+            "title": "Executive Assistant, AR Clerk and MARCOM Manager",
+            "location": "Edmonton, AB",
+            "dates": "2008 - 2015",
+            "description": "Perform a wide variety of executive secretarial and administrative duties as required by daily operations in ACAMP. Maintain, verify and record systematic accounts receivable records of business transactions. Calculate, prepare and process accounts receivable invoices and other financial records. Write, review and publish marketing collateral for ACAMP. Manage online presence including Website, Twitter, Events and mailouts."
+        },
+        {
+            "employer": "Tait Europe Ltd",
+            "title": "Sales Process Manager",
+            "location": "Huntingdon, UK",
+            "dates": "2007 - 2008",
+            "description": "Manage opportunity, bid and contract review process. Develop and maintain sales tools for bids. Monitor opportunities on CRM tool and ensure its use. Design and produce reports on opportunity values and numbers to show sales manager’s performance. Support various senior management team meetings and presentations including annual and monthly review and forecast data"
+        },
+        {
+            "employer": "NXT plc",
+            "title": "Communications Coordinator",
+            "location": "Huntingdon, UK",
+            "dates": "2005 - 2007",
+            "description": "Create, implement and monitor news flow. Write copy, select and manipulate artwork for news releases and website. Generate and maintain content for website with ongoing updates of product, customer and technology databases. Responsible for all operational aspects of producing financial reports"
+        },
+        {
+            "employer": "NXT plc",
+            "title": "Senior Scientist",
+            "location": "Huntingdon, UK",
+            "dates": "1997 - 2005",
+            "description": "Started as Project Scientist and progressed through Research Scientist, Acoustic Engineer to Senior Scientist. Design, support and maintain NXT software products. Design, execute and report scientific experiments including psychoacoustic tests and analysis. Write and coordinate company product installation packages, help files and manuals. Provide technical assistance and training. Co-authored published technical acoustics papers. Windows application programming with Borland Delphi including: documentation, installation, program testing and test-data acquisition. Science group organisation, maintenance of department intranet pages."
+        }
+    ]
+};
+
+/*var education = {};
+// use bracket notation for: last school, years attended, school's city
+education["name"] = "University of Southampton";
+education["dates"] = "1994 - 1997";
+education["location"] = "Southampton, UK";
+
+// it appears but education name didn't line up as expected :(
+var formattedEducationName = HTMLschoolName.replace("%data%", education.name);
+$("#education").append(HTMLschoolStart);
+$("#education").append(formattedEducationName);
+
+// Udacity answer
+// $("#main").append(education.name);*/
+
+// create new object education using object literal notation (JSON)
+// include name , city, major, minor, graduation years, online course info
+var education = {
+    "schools": [
+        {
+            "name": "University of Southamption",
+            "location": "Southamption, UK",
+            "degree": "BSc Hons Acoustics and Music",
+            "majors": [
+                "Acoustics",
+                "Music"
+            ],
+            "dates": "1994 - 1997",
+            "url" : "http://www.southampton.ac.uk/"
+        }
+    ],
+    "onlineCourses": [
+        {
+            "title": "Front-End Web Developer Nanodegree",
+            "school": "Udacity",
+            "dates": "2015",
+            "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
+        },
+        {
+            "title": "JavaScript Basics",
+            "school": "Udacity",
+            "dates": "2015",
+            "url": "https://www.udacity.com/course/ud804"
+        }
+    ]
+};
+
+// create new object projects using object literal notation (JSON)
+var projects = {
+    "projects": [
+        {
+            "title": "P0: About Me",
+            "dates": "2015",
+            "description": "My first webpage using HTML and CSS",
+            "images": "images/197x148.gif"
+        },
+        {
+            "title": "P1: Build a Portfolio Site",
+            "dates": "2015",
+            "description": "A PDF design mockup replicated in HTML and CSS. A responsive website that displays images, descriptions and links to each of the portfolio projects that will be completed during the course of the Front-End Web Developer Nanodegree.",
+            "images": "images/197x148.gif"
+        },
+        {
+            "title": "P2: Online Resume",
+            "dates": "2015",
+            "description": "A work in progress! Stepping it up to include JavaScript",
+            "images": "images/197x148.gif"
+        }
+    ]
+}
