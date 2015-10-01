@@ -1,3 +1,14 @@
+// Hello.
+//
+// This is JSHint, a tool that helps to detect errors and potential
+// problems in your JavaScript code.
+//
+// To start, simply enter some JavaScript anywhere on this page. Your
+// report will appear on the right side.
+//
+// Additionally, you can toggle specific options in the Configure
+// menu.
+
 var bio = {
     "name": "Valerie Yallup",
     "role": "Front-end Web Developer",
@@ -16,7 +27,7 @@ var bio = {
         "JavaScript",
         "Responsive Web Design"
     ]
-}
+};
 
 // write if statement that checks if there are skills in bio object
 
@@ -29,6 +40,33 @@ var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
+
+// I've been waiting for instructions on adding the remaining bio stuff
+// - nothing yet, can always remove if necessary
+// *****************************
+// topContacts list
+var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+
+$("#topContacts").append(formattedMobile);
+$("#topContacts").append(formattedEmail);
+$("#topContacts").append(formattedLocation);
+$("#topContacts").append(formattedGithub);
+$("#topContacts").append(formattedTwitter);
+
+//image
+var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+
+$("#header").append(formattedBioPic);
+
+// welcome
+var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+$("#header").append(formattedWelcomeMsg);
+
+// *****************************
 
 if (bio.skills.length > 0) {
 	$("#header").append(HTMLskillsStart);
@@ -73,7 +111,7 @@ var work = {
             "description": "Started as Project Scientist and progressed through Research Scientist, Acoustic Engineer to Senior Scientist. Design, support and maintain NXT software products. Design, execute and report scientific experiments including psychoacoustic tests and analysis. Write and coordinate company product installation packages, help files and manuals. Provide technical assistance and training. Co-authored published technical acoustics papers. Windows application programming with Borland Delphi including: documentation, installation, program testing and test-data acquisition. Science group organisation, maintenance of department intranet pages."
         }
     ]
-}
+};
 // write for-in loop to iterate thru jobs in work object.
 // .append() HTMLworkStart element for each
 
@@ -85,23 +123,27 @@ var work = {
 
 // format and .append() all work details
 
-for (job in work.jobs){
-	// console.log(work.jobs[job].title);
-	$("#workExperience").append(HTMLworkStart);
+function displayWork() {
+	for (var job in work.jobs){
+		// console.log(work.jobs[job].title);
+		$("#workExperience").append(HTMLworkStart);
 
-	var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-	var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-	var formattedEmployerTitle = formattedWorkEmployer + formattedWorkTitle;
+		var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+		var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+		var formattedEmployerTitle = formattedWorkEmployer + formattedWorkTitle;
 
-	var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-	var formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-	var formattedWorkDesc = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+		var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+		var formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+		var formattedWorkDesc = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 
-	$(".work-entry:last").append(formattedEmployerTitle);
-	$(".work-entry:last").append(formattedWorkDates);
-	$(".work-entry:last").append(formattedWorkLocation);
-	$(".work-entry:last").append(formattedWorkDesc);
-};
+		$(".work-entry:last").append(formattedEmployerTitle);
+		$(".work-entry:last").append(formattedWorkDates);
+		$(".work-entry:last").append(formattedWorkLocation);
+		$(".work-entry:last").append(formattedWorkDesc);
+	}
+}
+
+displayWork();
 
 var education = {
     "schools": [
@@ -131,7 +173,7 @@ var education = {
             "url": "https://www.udacity.com/course/ud804"
         }
     ]
-}
+};
 
 var projects = {
     "projects": [
@@ -154,4 +196,18 @@ var projects = {
             "images": "images/197x148.gif"
         }
     ]
-}
+};
+
+// Collecting Click Locations - my solution
+// $(document).click(function(loc){
+// 	logClicks(loc.pageX, loc.pageY);
+// })
+
+
+// Udacity solution
+$(document).click(function(loc){
+	var x = loc.pageX;
+	var y = loc.pageY;
+
+	logClicks(x, y);
+});
