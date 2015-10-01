@@ -257,3 +257,4 @@ $(document).click(function(loc){
 // };
 
 // $("#main").append(internationalizeButton);
+$("#mapDiv").append(googleMap);
