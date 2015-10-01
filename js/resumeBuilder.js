@@ -56,14 +56,14 @@ var work = {
             "title": "Sales Process Manager",
             "location": "Huntingdon, UK",
             "dates": "2007 - 2008",
-            "description": "Manage opportunity, bid and contract review process. Develop and maintain sales tools for bids. Monitor opportunities on CRM tool and ensure its use. Design and produce reports on opportunity values and numbers to show sales manager’s performance. Support various senior management team meetings and presentations including annual and monthly review and forecast data"
+            "description": "Manage opportunity, bid and contract review process. Develop and maintain sales tools for bids. Monitor opportunities on CRM tool and ensure its use. Design and produce reports on opportunity values and numbers to show sales manager’s performance. Support various senior management team meetings and presentations including annual and monthly review and forecast data."
         },
         {
             "employer": "NXT plc",
             "title": "Communications Coordinator",
             "location": "Huntingdon, UK",
             "dates": "2005 - 2007",
-            "description": "Create, implement and monitor news flow. Write copy, select and manipulate artwork for news releases and website. Generate and maintain content for website with ongoing updates of product, customer and technology databases. Responsible for all operational aspects of producing financial reports"
+            "description": "Create, implement and monitor news flow. Write copy, select and manipulate artwork for news releases and website. Generate and maintain content for website with ongoing updates of product, customer and technology databases. Responsible for all operational aspects of producing financial reports."
         },
         {
             "employer": "NXT plc",
@@ -83,6 +83,8 @@ var work = {
 // .append() concat of employer and title to the the element with
 // class work-entry:last
 
+// format and .append() all work details
+
 for (job in work.jobs){
 	// console.log(work.jobs[job].title);
 	$("#workExperience").append(HTMLworkStart);
@@ -91,9 +93,15 @@ for (job in work.jobs){
 	var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
 	var formattedEmployerTitle = formattedWorkEmployer + formattedWorkTitle;
 
-	$(".work-entry:last").append(formattedEmployerTitle);
-};
+	var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+	var formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+	var formattedWorkDesc = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 
+	$(".work-entry:last").append(formattedEmployerTitle);
+	$(".work-entry:last").append(formattedWorkDates);
+	$(".work-entry:last").append(formattedWorkLocation);
+	$(".work-entry:last").append(formattedWorkDesc);
+};
 
 var education = {
     "schools": [
