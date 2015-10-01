@@ -181,22 +181,52 @@ var projects = {
             "title": "P0: About Me",
             "dates": "2015",
             "description": "My first webpage using HTML and CSS",
-            "images": "images/197x148.gif"
+            "images": ["images/197x148.gif", "images/197x148.gif"]
         },
         {
             "title": "P1: Build a Portfolio Site",
             "dates": "2015",
             "description": "A PDF design mockup replicated in HTML and CSS. A responsive website that displays images, descriptions and links to each of the portfolio projects that will be completed during the course of the Front-End Web Developer Nanodegree.",
-            "images": "images/197x148.gif"
+            "images": ["images/197x148.gif", "images/197x148.gif"]
         },
         {
             "title": "P2: Online Resume",
             "dates": "2015",
             "description": "A work in progress! Stepping it up to include JavaScript",
-            "images": "images/197x148.gif"
+            "images": ["images/197x148.gif", "images/197x148.gif"]
         }
     ]
 };
+
+// encapsulate display() within the projects object
+
+// projects.display() should .append() all project info to projects section
+
+// start each project with HTMLprojectStart
+
+projects.display = function(){
+    for (var project in projects.projects){
+        $("#projects").append(HTMLprojectStart);
+
+        var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+        $(".project-entry:last").append(formattedProjectTitle);
+
+        var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+        $(".project-entry:last").append(formattedProjectDates);
+
+        var formattedProjectDesc = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+        $(".project-entry:last").append(formattedProjectDesc);
+
+        if (projects.projects[project].images.length > 0){
+            for (var image in projects.projects[project].images){
+                var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+                $(".project-entry:last").append(formattedProjectImage);
+            };
+        };
+    };
+};
+
+projects.display();
 
 // Collecting Click Locations - my solution
 // $(document).click(function(loc){
