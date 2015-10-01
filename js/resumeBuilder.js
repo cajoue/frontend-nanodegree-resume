@@ -18,6 +18,12 @@ var bio = {
     ]
 }
 
+// write if statement that checks if there are skills in bio object
+
+// if evaluates to true, .append() HTMLskillsStart to div with id=header
+
+// .append() the skills to the element with id=skills using HTMLskills to format each skill
+
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 
@@ -68,6 +74,26 @@ var work = {
         }
     ]
 }
+// write for-in loop to iterate thru jobs in work object.
+// .append() HTMLworkStart element for each
+
+// format each employer with HTMLworkEmployer
+// format each job title with HTMLworkTitle
+
+// .append() concat of employer and title to the the element with
+// class work-entry:last
+
+for (job in work.jobs){
+	// console.log(work.jobs[job].title);
+	$("#workExperience").append(HTMLworkStart);
+
+	var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+	var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+	var formattedEmployerTitle = formattedWorkEmployer + formattedWorkTitle;
+
+	$(".work-entry:last").append(formattedEmployerTitle);
+};
+
 
 var education = {
     "schools": [
