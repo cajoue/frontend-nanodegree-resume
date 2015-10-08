@@ -228,6 +228,9 @@ projects.display = function(){
 
 projects.display();
 
+
+// TODO: move these functions to helper.js
+
 // Collecting Click Locations - my solution
 // $(document).click(function(loc){
 // 	logClicks(loc.pageX, loc.pageY);
