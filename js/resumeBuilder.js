@@ -112,9 +112,11 @@ var work = {
 
 // format and .append() all work details
 
-function displayWork() {
+// encapsulate displayWork() function as a
+// display() function within the work object
+
+work.display = function(){
 	for (var job in work.jobs){
-		// console.log(work.jobs[job].title);
 		$("#workExperience").append(HTMLworkStart);
 
 		var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
@@ -132,7 +134,8 @@ function displayWork() {
 	}
 }
 
-displayWork();
+work.display();
+
 
 var education = {
     "schools": [
