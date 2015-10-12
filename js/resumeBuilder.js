@@ -1,14 +1,3 @@
-// Hello.
-//
-// This is JSHint, a tool that helps to detect errors and potential
-// problems in your JavaScript code.
-//
-// To start, simply enter some JavaScript anywhere on this page. Your
-// report will appear on the right side.
-//
-// Additionally, you can toggle specific options in the Configure
-// menu.
-
 var bio = {
     "name": "Valerie Yallup",
     "role": "Front-end Web Developer",
@@ -230,20 +219,6 @@ projects.display();
 
 
 // TODO: move these functions to helper.js
-
-// Collecting Click Locations - my solution
-// $(document).click(function(loc){
-// 	logClicks(loc.pageX, loc.pageY);
-// })
-
-
-// Udacity solution
-$(document).click(function(loc){
-	var x = loc.pageX;
-	var y = loc.pageY;
-
-	logClicks(x, y);
-});
 
 // .append() internationalizeButton to main div
 // create function inName() that takes a string of two names
