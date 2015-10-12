@@ -217,22 +217,23 @@ projects.display = function(){
 
 projects.display();
 
+$("#mapDiv").append(googleMap);
 
-// TODO: move these functions to helper.js
+/********
+// FEAT: internationalize name button - optional
 
 // .append() internationalizeButton to main div
 // create function inName() that takes a string of two names
-// and returns international version Cameron PITTMAN
+// and returns international version
 // Gaaah! Note: The inName button actually will not accept a parameter and should internationalize the value stored in the bio object
-// Not really feeling the need for a button...
 
-// function inName() {
-//     var names = bio.name.trim().split(" ");
-//     console.log(names);
-//     names[0] = names[0].slice(0,1).toUpperCase() + names[0].slice(1).toLowerCase();
-//     names[1] = names[1].toUpperCase();
-//     return names.join(" ");
-// };
+function inName() {
+    var names = bio.name.trim().split(" ");
+    console.log(names);
+    names[0] = names[0].slice(0,1).toUpperCase() + names[0].slice(1).toLowerCase();
+    names[1] = names[1].toUpperCase();
+    return names.join(" ");
+};
 
-// $("#main").append(internationalizeButton);
-$("#mapDiv").append(googleMap);
+$("#main").append(internationalizeButton);
+*********/
