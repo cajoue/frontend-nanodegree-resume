@@ -159,6 +159,30 @@ var education = {
             "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
         },
         {
+            "title": "Intro to HTML and CSS",
+            "school": "Udacity",
+            "dates": "2015",
+            "url": "https://www.udacity.com/course/ud304"
+        },
+        {
+            "title": "Responsive Web Design Fundamentals",
+            "school": "Udacity",
+            "dates": "2015",
+            "url": "https://www.udacity.com/course/ud893"
+        },
+        {
+            "title": "Responsive Images",
+            "school": "Udacity",
+            "dates": "2015",
+            "url": "https://www.udacity.com/course/ud882"
+        },
+        {
+            "title": "How to Use Git and GitHub",
+            "school": "Udacity",
+            "dates": "2015",
+            "url": "https://www.udacity.com/course/ud775"
+        },
+        {
             "title": "JavaScript Basics",
             "school": "Udacity",
             "dates": "2015",
@@ -166,6 +190,51 @@ var education = {
         }
     ]
 };
+
+// encapsulate display() within the education object
+
+education.display = function(){
+    for (var school in education.schools){
+        $("#education").append(HTMLschoolStart);
+
+        var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
+        $(".education-entry:last").append(formattedSchoolName);
+
+        var formattedSchoolDegree = HTMLschoolName.replace("%data%", education.schools[school].degree);
+        $(".education-entry:last").append(formattedSchoolDegree);
+
+        var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+        $(".education-entry:last").append(formattedSchoolDates);
+
+        var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+        $(".education-entry:last").append(formattedSchoolLocation);
+
+        if (education.schools[school].majors.length > 1){
+            for (var major in education.schools[school].majors){
+                var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors[major]);
+                $(".education-entry:last").append(formattedSchoolMajor);
+            }
+        }
+    }
+
+    $("#education").append(HTMLonlineClasses);
+    for (var course in education.onlineCourses){
+        $("#education").append(HTMLschoolStart);
+
+        var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
+
+        var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
+        $(".education-entry:last").append(formattedOnlineTitle + formattedOnlineSchool);
+
+        var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates);
+        $(".education-entry:last").append(formattedOnlineDates);
+
+        var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
+        $(".education-entry:last").append(formattedOnlineURL);
+    }
+}
+
+education.display();
 
 var projects = {
     "projects": [
