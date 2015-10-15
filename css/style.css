@@ -2,7 +2,12 @@ body,
 div,
 ul,
 li,
-p,
+p {
+  padding:0;
+  margin:0;
+  font-family: 'Lato', sans-serif;
+}
+
 h1,
 h2,
 h3,
@@ -11,7 +16,7 @@ h5,
 h6 {
   padding:0;
   margin:0;
-  font-family: "Helvetica", sans-serif;
+  font-family: 'Droid Serif', serif;
 }
 
 .clear-fix {
@@ -26,7 +31,7 @@ h6 {
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: #f8981c;
   line-height: 48px;
   display: inline;
 }
@@ -37,6 +42,9 @@ h2 {
   color: #999;
   line-height: 29px;
   padding: 10px;
+  border-left-color: #f8981c;
+      border-left-style: solid;
+    border-left-width: 6px;
 }
 
 h3 {
@@ -61,7 +69,6 @@ h5 {
 
 }
 
-
 .date-text {
   font-style: italic;
   font-size: 14px;
@@ -81,12 +88,20 @@ h5 {
 
 .course-link {
   font-size: 14px;
-  color: #f5ae23;
+  color: #f8981c;
   line-height: 16px;
 }
 
+.role {
+  font-weight: bold;
+  font-size: 24px;
+  color: #999;
+  line-height: 29px;
+  padding: 10px;
+}
+
 p {
-  font-size: 14px;
+  font-size: 16px;
   color: #333;
   line-height: 21px;
 }
@@ -106,16 +121,16 @@ a {
 }
 
 #skills-h3 {
-  color: #f5ae23;
+  color: #f8981c;
   display: none;
 }
 
-.orange {
-  background-color: #f5ae23;
+.feature-bg {
+  background-color: #f8981c;
 }
 
 .orange-text {
-  color: #f5ae23;
+  color: #f8981c;
 }
 
 .white-text {
