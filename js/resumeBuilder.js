@@ -40,6 +40,13 @@ bio.displayBio = function(){
     $('#topContacts').append(formattedGithub);
     $('#topContacts').append(formattedTwitter);
 
+    // footerContacts list
+    $('#footerContacts').append(formattedMobile);
+    $('#footerContacts').append(formattedEmail);
+    $('#footerContacts').append(formattedLocation);
+    $('#footerContacts').append(formattedGithub);
+    $('#footerContacts').append(formattedTwitter);
+
     //image
     var formattedBioPic = HTMLbioPic.replace('%data%', bio.bioPic);
     $('#header').append(formattedBioPic);
