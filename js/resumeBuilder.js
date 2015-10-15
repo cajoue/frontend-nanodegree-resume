@@ -254,19 +254,19 @@ var projects = {
             'title': 'P0: About Me',
             'dates': '2015',
             'description': 'My first webpage using HTML and CSS',
-            'images': ['images/197x148.gif', 'images/197x148.gif']
+            'images': ['images/p0-about-me-1-small.jpg']
         },
         {
             'title': 'P1: Build a Portfolio Site',
             'dates': '2015',
             'description': 'A PDF design mockup replicated in HTML and CSS. A responsive website that displays images, descriptions and links to each of the portfolio projects that will be completed during the course of the Front-End Web Developer Nanodegree.',
-            'images': ['images/197x148.gif', 'images/197x148.gif']
+            'images': ['images/p1-portfolio-1-small.jpg', 'images/p1-portfolio-2-small.jpg']
         },
         {
             'title': 'P2: Online Resume',
             'dates': '2015',
             'description': 'A work in progress! Stepping it up to include JavaScript',
-            'images': ['images/197x148.gif', 'images/197x148.gif']
+            'images': ['images/p2-resume-1-small.jpg', 'images/p2-resume-2-small.jpg']
         }
     ]
 };
