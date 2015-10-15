@@ -64,10 +64,12 @@ bio.displayBio = function(){
 
 // .append() the skills to the element with id=skills using HTMLskills to format each skill
 
+// change for-in loops to regular for loops as per style guide
+
 bio.displaySkills = function(){
     if (bio.skills.length > 0) {
         $('#header').append(HTMLskillsStart);
-        for (var skill in bio.skills) {
+        for (var skill = 0; skill < bio.skills.length; skill++){
             var formattedSkill = HTMLskills.replace('%data%', bio.skills[skill]);
             $('#skills').append(formattedSkill);
         }
@@ -120,14 +122,16 @@ var work = {
 // encapsulate displayWork() function as a
 // display() function within the work object
 
+// change for-in loop to regular for loop as per style guide
+
 work.display = function(){
-    for (var job in work.jobs){
+//    for (var job in work.jobs){
+    for (var job = 0; job < work.jobs.length; job++){
         $('#workExperience').append(HTMLworkStart);
 
         var formattedWorkEmployer = HTMLworkEmployer.replace('%data%', work.jobs[job].employer);
         var formattedWorkTitle = HTMLworkTitle.replace('%data%', work.jobs[job].title);
         var formattedEmployerTitle = formattedWorkEmployer + formattedWorkTitle;
-
         var formattedWorkLocation = HTMLworkLocation.replace('%data%', work.jobs[job].location);
         var formattedWorkDates = HTMLworkDates.replace('%data%', work.jobs[job].dates);
         var formattedWorkDesc = HTMLworkDescription.replace('%data%', work.jobs[job].description);
@@ -157,43 +161,43 @@ var education = {
         {
             'title': 'Front-End Web Developer Nanodegree',
             'school': 'Udacity',
-            'dates': '2015',
+            'date': '2015',
             'url': 'https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001'
         },
         {
             'title': 'Intro to HTML and CSS',
             'school': 'Udacity',
-            'dates': '2015',
+            'date': '2015',
             'url': 'https://www.udacity.com/course/ud304'
         },
         {
             'title': 'Responsive Web Design Fundamentals',
             'school': 'Udacity',
-            'dates': '2015',
+            'date': '2015',
             'url': 'https://www.udacity.com/course/ud893'
         },
         {
             'title': 'Responsive Images',
             'school': 'Udacity',
-            'dates': '2015',
+            'date': '2015',
             'url': 'https://www.udacity.com/course/ud882'
         },
         {
             'title': 'How to Use Git and GitHub',
             'school': 'Udacity',
-            'dates': '2015',
+            'date': '2015',
             'url': 'https://www.udacity.com/course/ud775'
         },
         {
             'title': 'JavaScript Basics',
             'school': 'Udacity',
-            'dates': '2015',
+            'date': '2015',
             'url': 'https://www.udacity.com/course/ud804'
         },
         {
             'title': 'Intro to jQuery',
             'school': 'Udacity',
-            'dates': '2015',
+            'date': '2015',
             'url': 'https://www.udacity.com/course/ud245'
         }
     ]
@@ -201,8 +205,11 @@ var education = {
 
 // encapsulate display() within the education object
 
+// change for-in loops to regular for loops as per style guide
+
 education.display = function(){
-    for (var school in education.schools){
+    //for (var school in education.schools){
+    for (var school = 0; school < education.schools.length; school++){
         $('#education').append(HTMLschoolStart);
 
         var formattedSchoolName = HTMLschoolName.replace('%data%', education.schools[school].name);
@@ -217,16 +224,15 @@ education.display = function(){
         var formattedSchoolLocation = HTMLschoolLocation.replace('%data%', education.schools[school].location);
         $('.education-entry:last').append(formattedSchoolLocation);
 
-        if (education.schools[school].majors.length > 1){
-            for (var major in education.schools[school].majors){
-                var formattedSchoolMajor = HTMLschoolMajor.replace('%data%', education.schools[school].majors[major]);
-                $('.education-entry:last').append(formattedSchoolMajor);
-            }
+        for (var major = 0; major < education.schools[school].majors.length; major++){
+            var formattedSchoolMajor = HTMLschoolMajor.replace('%data%', education.schools[school].majors[major]);
+            $('.education-entry:last').append(formattedSchoolMajor);
         }
     }
 
     $('#education').append(HTMLonlineClasses);
-    for (var course in education.onlineCourses){
+    //for (var course in education.onlineCourses){
+    for (var course = 0; course < education.onlineCourses.length; course++){
         $('#education').append(HTMLschoolStart);
 
         var formattedOnlineTitle = HTMLonlineTitle.replace('%data%', education.onlineCourses[course].title);
@@ -234,8 +240,8 @@ education.display = function(){
         var formattedOnlineSchool = HTMLonlineSchool.replace('%data%', education.onlineCourses[course].school);
         $('.education-entry:last').append(formattedOnlineTitle + formattedOnlineSchool);
 
-        var formattedOnlineDates = HTMLonlineDates.replace('%data%', education.onlineCourses[course].dates);
-        $('.education-entry:last').append(formattedOnlineDates);
+        var formattedOnlineDate = HTMLonlineDates.replace('%data%', education.onlineCourses[course].date);
+        $('.education-entry:last').append(formattedOnlineDate);
 
         var formattedOnlineURL = HTMLonlineURL.replace('%data%', education.onlineCourses[course].url);
         $('.education-entry:last').append(formattedOnlineURL);
@@ -271,8 +277,10 @@ var projects = {
 
 // start each project with HTMLprojectStart
 
+// change for-in loops to regular for loops as per style guide
+
 projects.display = function(){
-    for (var project in projects.projects){
+    for (var project = 0; project < projects.projects.length; project++){
         $('#projects').append(HTMLprojectStart);
 
         var formattedProjectTitle = HTMLprojectTitle.replace('%data%', projects.projects[project].title);
@@ -285,7 +293,7 @@ projects.display = function(){
         $('.project-entry:last').append(formattedProjectDesc);
 
         if (projects.projects[project].images.length > 0){
-            for (var image in projects.projects[project].images){
+            for (var image = 0; image < projects.projects[project].images.length; image++){
                 var formattedProjectImage = HTMLprojectImage.replace('%data%', projects.projects[project].images[image]);
                 $('.project-entry:last').append(formattedProjectImage);
             }
