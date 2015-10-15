@@ -1,22 +1,55 @@
 var bio = {
-    "name": "Valerie Yallup",
-    "role": "Front-end Web Developer",
-    "contacts": {
-        "mobile": "+41 55 555 55 55",
-        "email": "valerie@example.com",
-        "github": "cajoue",
-        "twitter": "@example",
-        "location": "Orbe, Switzerland"
+    'name': 'Valerie Yallup',
+    'role': 'Front-end Web Developer',
+    'contacts': {
+        'mobile': '+41 55 555 55 55',
+        'email': 'valerie@example.com',
+        'github': 'cajoue',
+        'twitter': '@example',
+        'location': 'Orbe, Switzerland'
     },
-    "bioPic": "images/vy_640x640.jpg",
-    "welcomeMessage": "Salut",
-    "skills": [
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "Responsive Web Design"
-    ]
+    'welcomeMessage': "Salut!",
+    'skills': [
+        'HTML5',
+        'CSS3',
+        'Responsive Web Design',
+        'JavaScript',
+        'jQuery'
+    ],
+    'bioPic': 'images/vy_640x640.jpg',
 };
+
+bio.displayBio = function(){
+    // header
+    var formattedName = HTMLheaderName.replace('%data%', bio.name);
+    var formattedRole = HTMLheaderRole.replace('%data%', bio.role);
+
+    $('#header').prepend(formattedRole);
+    $('#header').prepend(formattedName);
+
+    // topContacts list
+    var formattedMobile = HTMLmobile.replace('%data%', bio.contacts.mobile);
+    var formattedEmail = HTMLemail.replace('%data%', bio.contacts.email);
+    var formattedGithub = HTMLgithub.replace('%data%', bio.contacts.github);
+    var formattedTwitter = HTMLtwitter.replace('%data%', bio.contacts.twitter);
+    var formattedLocation = HTMLlocation.replace('%data%', bio.contacts.location);
+
+    $('#topContacts').append(formattedMobile);
+    $('#topContacts').append(formattedEmail);
+    $('#topContacts').append(formattedLocation);
+    $('#topContacts').append(formattedGithub);
+    $('#topContacts').append(formattedTwitter);
+
+    //image
+    var formattedBioPic = HTMLbioPic.replace('%data%', bio.bioPic);
+    $('#header').append(formattedBioPic);
+
+    // welcome
+    var formattedWelcomeMsg = HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage);
+    $('#header').append(formattedWelcomeMsg);
+};
+
+// *****************************
 
 // write if statement that checks if there are skills in bio object
 
@@ -24,80 +57,45 @@ var bio = {
 
 // .append() the skills to the element with id=skills using HTMLskills to format each skill
 
-var formattedName = HTMLheaderName.replace("%data%", bio.name);
-var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-
-// I've been waiting for instructions on adding the remaining bio stuff
-// - nothing yet, can always remove if necessary
-// *****************************
-// topContacts list
-var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-
-$("#topContacts").append(formattedMobile);
-$("#topContacts").append(formattedEmail);
-$("#topContacts").append(formattedLocation);
-$("#topContacts").append(formattedGithub);
-$("#topContacts").append(formattedTwitter);
-
-//image
-var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
-
-$("#header").append(formattedBioPic);
-
-// welcome
-var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-$("#header").append(formattedWelcomeMsg);
-
-// *****************************
-
-if (bio.skills.length > 0) {
-	$("#header").append(HTMLskillsStart);
-	var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-	$("#skills").append(formattedSkill);
-	formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-	$("#skills").append(formattedSkill);
-	formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-	$("#skills").append(formattedSkill);
-	formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
-	$("#skills").append(formattedSkill);
-}
+bio.displaySkills = function(){
+    if (bio.skills.length > 0) {
+        $('#header').append(HTMLskillsStart);
+        for (var skill in bio.skills) {
+            var formattedSkill = HTMLskills.replace('%data%', bio.skills[skill]);
+            $('#skills').append(formattedSkill);
+        }
+    }
+};
 
 var work = {
-    "jobs": [
+    'jobs': [
         {
-            "employer": "ACAMP",
-            "title": "Executive Assistant, AR Clerk and MARCOM Manager",
-            "location": "Edmonton, AB",
-            "dates": "2008 - 2015",
-            "description": "Perform a wide variety of executive secretarial and administrative duties as required by daily operations in ACAMP. Maintain, verify and record systematic accounts receivable records of business transactions. Calculate, prepare and process accounts receivable invoices and other financial records. Write, review and publish marketing collateral for ACAMP. Manage online presence including Website, Twitter, Events and mailouts."
+            'employer': 'ACAMP',
+            'title': 'Executive Assistant, AR Clerk and MARCOM Manager',
+            'location': 'Edmonton, AB',
+            'dates': '2008 - 2015',
+            'description': 'Perform a wide variety of executive secretarial and administrative duties as required by daily operations in ACAMP. Maintain, verify and record systematic accounts receivable records of business transactions. Calculate, prepare and process accounts receivable invoices and other financial records. Write, review and publish marketing collateral for ACAMP. Manage online presence including Website, Twitter, Events and mailouts.'
         },
         {
-            "employer": "Tait Europe Ltd",
-            "title": "Sales Process Manager",
-            "location": "Huntingdon, UK",
-            "dates": "2007 - 2008",
-            "description": "Manage opportunity, bid and contract review process. Develop and maintain sales tools for bids. Monitor opportunities on CRM tool and ensure its use. Design and produce reports on opportunity values and numbers to show sales manager’s performance. Support various senior management team meetings and presentations including annual and monthly review and forecast data."
+            'employer': 'Tait Europe Ltd',
+            'title': 'Sales Process Manager',
+            'location': 'Huntingdon, UK',
+            'dates': '2007 - 2008',
+            'description': 'Manage opportunity, bid and contract review process. Develop and maintain sales tools for bids. Monitor opportunities on CRM tool and ensure its use. Design and produce reports on opportunity values and numbers to show sales manager’s performance. Support various senior management team meetings and presentations including annual and monthly review and forecast data.'
         },
         {
-            "employer": "NXT plc",
-            "title": "Communications Coordinator",
-            "location": "Huntingdon, UK",
-            "dates": "2005 - 2007",
-            "description": "Create, implement and monitor news flow. Write copy, select and manipulate artwork for news releases and website. Generate and maintain content for website with ongoing updates of product, customer and technology databases. Responsible for all operational aspects of producing financial reports."
+            'employer': 'NXT plc',
+            'title': 'Communications Coordinator',
+            'location': 'Huntingdon, UK',
+            'dates': '2005 - 2007',
+            'description': 'Create, implement and monitor news flow. Write copy, select and manipulate artwork for news releases and website. Generate and maintain content for website with ongoing updates of product, customer and technology databases. Responsible for all operational aspects of producing financial reports.'
         },
         {
-            "employer": "NXT plc",
-            "title": "Senior Scientist",
-            "location": "Huntingdon, UK",
-            "dates": "1997 - 2005",
-            "description": "Started as Project Scientist and progressed through Research Scientist, Acoustic Engineer to Senior Scientist. Design, support and maintain NXT software products. Design, execute and report scientific experiments including psychoacoustic tests and analysis. Write and coordinate company product installation packages, help files and manuals. Provide technical assistance and training. Co-authored published technical acoustics papers. Windows application programming with Borland Delphi including: documentation, installation, program testing and test-data acquisition. Science group organisation, maintenance of department intranet pages."
+            'employer': 'NXT plc',
+            'title': 'Senior Scientist',
+            'location': 'Huntingdon, UK',
+            'dates': '1997 - 2005',
+            'description': 'Started as Project Scientist and progressed through Research Scientist, Acoustic Engineer to Senior Scientist. Design, support and maintain NXT software products. Design, execute and report scientific experiments including psychoacoustic tests and analysis. Write and coordinate company product installation packages, help files and manuals. Provide technical assistance and training. Co-authored published technical acoustics papers. Windows application programming with Borland Delphi including: documentation, installation, program testing and test-data acquisition. Science group organisation, maintenance of department intranet pages.'
         }
     ]
 };
@@ -116,77 +114,80 @@ var work = {
 // display() function within the work object
 
 work.display = function(){
-	for (var job in work.jobs){
-		$("#workExperience").append(HTMLworkStart);
+    for (var job in work.jobs){
+        $('#workExperience').append(HTMLworkStart);
 
-		var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-		var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-		var formattedEmployerTitle = formattedWorkEmployer + formattedWorkTitle;
+        var formattedWorkEmployer = HTMLworkEmployer.replace('%data%', work.jobs[job].employer);
+        var formattedWorkTitle = HTMLworkTitle.replace('%data%', work.jobs[job].title);
+        var formattedEmployerTitle = formattedWorkEmployer + formattedWorkTitle;
 
-		var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-		var formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-		var formattedWorkDesc = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+        var formattedWorkLocation = HTMLworkLocation.replace('%data%', work.jobs[job].location);
+        var formattedWorkDates = HTMLworkDates.replace('%data%', work.jobs[job].dates);
+        var formattedWorkDesc = HTMLworkDescription.replace('%data%', work.jobs[job].description);
 
-		$(".work-entry:last").append(formattedEmployerTitle);
-		$(".work-entry:last").append(formattedWorkDates);
-		$(".work-entry:last").append(formattedWorkLocation);
-		$(".work-entry:last").append(formattedWorkDesc);
-	}
-}
-
-work.display();
-
+        $('.work-entry:last').append(formattedEmployerTitle);
+        $('.work-entry:last').append(formattedWorkDates);
+        $('.work-entry:last').append(formattedWorkLocation);
+        $('.work-entry:last').append(formattedWorkDesc);
+    }
+};
 
 var education = {
-    "schools": [
+    'schools': [
         {
-            "name": "University of Southamption",
-            "location": "Southamption, UK",
-            "degree": "BSc Hons Acoustics and Music",
-            "majors": [
-                "Acoustics",
-                "Music"
+            'name': 'University of Southamption',
+            'location': 'Southamption, UK',
+            'degree': 'BSc Hons Acoustics and Music',
+            'majors': [
+                'Acoustics',
+                'Music'
             ],
-            "dates": "1994 - 1997",
-            "url" : "http://www.southampton.ac.uk/"
+            'dates': '1997',
+            'url' : 'http://www.southampton.ac.uk/'
         }
     ],
-    "onlineCourses": [
+    'onlineCourses': [
         {
-            "title": "Front-End Web Developer Nanodegree",
-            "school": "Udacity",
-            "dates": "2015",
-            "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
+            'title': 'Front-End Web Developer Nanodegree',
+            'school': 'Udacity',
+            'dates': '2015',
+            'url': 'https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001'
         },
         {
-            "title": "Intro to HTML and CSS",
-            "school": "Udacity",
-            "dates": "2015",
-            "url": "https://www.udacity.com/course/ud304"
+            'title': 'Intro to HTML and CSS',
+            'school': 'Udacity',
+            'dates': '2015',
+            'url': 'https://www.udacity.com/course/ud304'
         },
         {
-            "title": "Responsive Web Design Fundamentals",
-            "school": "Udacity",
-            "dates": "2015",
-            "url": "https://www.udacity.com/course/ud893"
+            'title': 'Responsive Web Design Fundamentals',
+            'school': 'Udacity',
+            'dates': '2015',
+            'url': 'https://www.udacity.com/course/ud893'
         },
         {
-            "title": "Responsive Images",
-            "school": "Udacity",
-            "dates": "2015",
-            "url": "https://www.udacity.com/course/ud882"
+            'title': 'Responsive Images',
+            'school': 'Udacity',
+            'dates': '2015',
+            'url': 'https://www.udacity.com/course/ud882'
         },
         {
-            "title": "How to Use Git and GitHub",
-            "school": "Udacity",
-            "dates": "2015",
-            "url": "https://www.udacity.com/course/ud775"
+            'title': 'How to Use Git and GitHub',
+            'school': 'Udacity',
+            'dates': '2015',
+            'url': 'https://www.udacity.com/course/ud775'
         },
         {
-            "title": "JavaScript Basics",
-            "school": "Udacity",
-            "dates": "2015",
-            "url": "https://www.udacity.com/course/ud804"
+            'title': 'JavaScript Basics',
+            'school': 'Udacity',
+            'dates': '2015',
+            'url': 'https://www.udacity.com/course/ud804'
+        },
+        {
+            'title': 'Intro to jQuery',
+            'school': 'Udacity',
+            'dates': '2015',
+            'url': 'https://www.udacity.com/course/ud245'
         }
     ]
 };
@@ -195,66 +196,64 @@ var education = {
 
 education.display = function(){
     for (var school in education.schools){
-        $("#education").append(HTMLschoolStart);
+        $('#education').append(HTMLschoolStart);
 
-        var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
-        $(".education-entry:last").append(formattedSchoolName);
+        var formattedSchoolName = HTMLschoolName.replace('%data%', education.schools[school].name);
+        $('.education-entry:last').append(formattedSchoolName);
 
-        var formattedSchoolDegree = HTMLschoolName.replace("%data%", education.schools[school].degree);
-        $(".education-entry:last").append(formattedSchoolDegree);
+        var formattedSchoolDegree = HTMLschoolName.replace('%data%', education.schools[school].degree);
+        $('.education-entry:last').append(formattedSchoolDegree);
 
-        var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
-        $(".education-entry:last").append(formattedSchoolDates);
+        var formattedSchoolDates = HTMLschoolDates.replace('%data%', education.schools[school].dates);
+        $('.education-entry:last').append(formattedSchoolDates);
 
-        var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
-        $(".education-entry:last").append(formattedSchoolLocation);
+        var formattedSchoolLocation = HTMLschoolLocation.replace('%data%', education.schools[school].location);
+        $('.education-entry:last').append(formattedSchoolLocation);
 
         if (education.schools[school].majors.length > 1){
             for (var major in education.schools[school].majors){
-                var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors[major]);
-                $(".education-entry:last").append(formattedSchoolMajor);
+                var formattedSchoolMajor = HTMLschoolMajor.replace('%data%', education.schools[school].majors[major]);
+                $('.education-entry:last').append(formattedSchoolMajor);
             }
         }
     }
 
-    $("#education").append(HTMLonlineClasses);
+    $('#education').append(HTMLonlineClasses);
     for (var course in education.onlineCourses){
-        $("#education").append(HTMLschoolStart);
+        $('#education').append(HTMLschoolStart);
 
-        var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
+        var formattedOnlineTitle = HTMLonlineTitle.replace('%data%', education.onlineCourses[course].title);
 
-        var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
-        $(".education-entry:last").append(formattedOnlineTitle + formattedOnlineSchool);
+        var formattedOnlineSchool = HTMLonlineSchool.replace('%data%', education.onlineCourses[course].school);
+        $('.education-entry:last').append(formattedOnlineTitle + formattedOnlineSchool);
 
-        var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates);
-        $(".education-entry:last").append(formattedOnlineDates);
+        var formattedOnlineDates = HTMLonlineDates.replace('%data%', education.onlineCourses[course].dates);
+        $('.education-entry:last').append(formattedOnlineDates);
 
-        var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
-        $(".education-entry:last").append(formattedOnlineURL);
+        var formattedOnlineURL = HTMLonlineURL.replace('%data%', education.onlineCourses[course].url);
+        $('.education-entry:last').append(formattedOnlineURL);
     }
-}
-
-education.display();
+};
 
 var projects = {
-    "projects": [
+    'projects': [
         {
-            "title": "P0: About Me",
-            "dates": "2015",
-            "description": "My first webpage using HTML and CSS",
-            "images": ["images/197x148.gif", "images/197x148.gif"]
+            'title': 'P0: About Me',
+            'dates': '2015',
+            'description': 'My first webpage using HTML and CSS',
+            'images': ['images/197x148.gif', 'images/197x148.gif']
         },
         {
-            "title": "P1: Build a Portfolio Site",
-            "dates": "2015",
-            "description": "A PDF design mockup replicated in HTML and CSS. A responsive website that displays images, descriptions and links to each of the portfolio projects that will be completed during the course of the Front-End Web Developer Nanodegree.",
-            "images": ["images/197x148.gif", "images/197x148.gif"]
+            'title': 'P1: Build a Portfolio Site',
+            'dates': '2015',
+            'description': 'A PDF design mockup replicated in HTML and CSS. A responsive website that displays images, descriptions and links to each of the portfolio projects that will be completed during the course of the Front-End Web Developer Nanodegree.',
+            'images': ['images/197x148.gif', 'images/197x148.gif']
         },
         {
-            "title": "P2: Online Resume",
-            "dates": "2015",
-            "description": "A work in progress! Stepping it up to include JavaScript",
-            "images": ["images/197x148.gif", "images/197x148.gif"]
+            'title': 'P2: Online Resume',
+            'dates': '2015',
+            'description': 'A work in progress! Stepping it up to include JavaScript',
+            'images': ['images/197x148.gif', 'images/197x148.gif']
         }
     ]
 };
@@ -267,29 +266,33 @@ var projects = {
 
 projects.display = function(){
     for (var project in projects.projects){
-        $("#projects").append(HTMLprojectStart);
+        $('#projects').append(HTMLprojectStart);
 
-        var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
-        $(".project-entry:last").append(formattedProjectTitle);
+        var formattedProjectTitle = HTMLprojectTitle.replace('%data%', projects.projects[project].title);
+        $('.project-entry:last').append(formattedProjectTitle);
 
-        var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
-        $(".project-entry:last").append(formattedProjectDates);
+        var formattedProjectDates = HTMLprojectDates.replace('%data%', projects.projects[project].dates);
+        $('.project-entry:last').append(formattedProjectDates);
 
-        var formattedProjectDesc = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
-        $(".project-entry:last").append(formattedProjectDesc);
+        var formattedProjectDesc = HTMLprojectDescription.replace('%data%', projects.projects[project].description);
+        $('.project-entry:last').append(formattedProjectDesc);
 
         if (projects.projects[project].images.length > 0){
             for (var image in projects.projects[project].images){
-                var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
-                $(".project-entry:last").append(formattedProjectImage);
-            };
-        };
-    };
+                var formattedProjectImage = HTMLprojectImage.replace('%data%', projects.projects[project].images[image]);
+                $('.project-entry:last').append(formattedProjectImage);
+            }
+        }
+    }
 };
 
+bio.displayBio();
+bio.displaySkills();
+work.display();
 projects.display();
+education.display();
 
-$("#mapDiv").append(googleMap);
+$('#mapDiv').append(googleMap);
 
 /********
 // FEAT: internationalize name button - optional
@@ -300,12 +303,12 @@ $("#mapDiv").append(googleMap);
 // Gaaah! Note: The inName button actually will not accept a parameter and should internationalize the value stored in the bio object
 
 function inName() {
-    var names = bio.name.trim().split(" ");
+    var names = bio.name.trim().split(' ');
     console.log(names);
     names[0] = names[0].slice(0,1).toUpperCase() + names[0].slice(1).toLowerCase();
     names[1] = names[1].toUpperCase();
-    return names.join(" ");
+    return names.join(' ');
 };
 
-$("#main").append(internationalizeButton);
+$('#main').append(internationalizeButton);
 *********/
