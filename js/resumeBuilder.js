@@ -1,22 +1,22 @@
 var bio = {
-    'name': 'Valerie Yallup',
-    'role': 'Front-end Web Developer',
-    'contacts': {
-        'mobile': '+41 55 555 55 55',
-        'email': 'valerie@example.com',
-        'github': 'cajoue',
-        'twitter': '@example',
-        'location': 'Orbe, Switzerland'
+    name: 'Valerie Yallup',
+    role: 'Front-end Web Developer',
+    contacts: {
+        mobile: '+41 55 555 55 55',
+        email: 'valerie@example.com',
+        github: 'cajoue',
+        twitter: '@example',
+        location: 'Orbe, Switzerland'
     },
-    'welcomeMessage': "Salut!",
-    'skills': [
+    welcomeMessage: "Salut!",
+    skills: [
         'HTML5',
         'CSS3',
         'Responsive Web Design',
         'JavaScript',
         'jQuery'
     ],
-    'bioPic': 'images/vy_640x640.jpg',
+    bioPic: 'images/vy_640x640.jpg',
 };
 
 bio.displayBio = function(){
@@ -77,34 +77,34 @@ bio.displaySkills = function(){
 };
 
 var work = {
-    'jobs': [
+    jobs: [
         {
-            'employer': 'ACAMP',
-            'title': 'Executive Assistant, AR Clerk and MARCOM Manager',
-            'location': 'Edmonton, AB',
-            'dates': '2008 - 2015',
-            'description': 'Perform a wide variety of executive secretarial and administrative duties as required by daily operations in ACAMP. Maintain, verify and record systematic accounts receivable records of business transactions. Calculate, prepare and process accounts receivable invoices and other financial records. Write, review and publish marketing collateral for ACAMP. Manage online presence including Website, Twitter, Events and mailouts.'
+            employer: 'ACAMP',
+            title: 'Executive Assistant, AR Clerk and MARCOM Manager',
+            location: 'Edmonton, AB',
+            dates: '2008 - 2015',
+            description: 'Perform a wide variety of executive secretarial and administrative duties as required by daily operations in ACAMP. Maintain, verify and record systematic accounts receivable records of business transactions. Calculate, prepare and process accounts receivable invoices and other financial records. Write, review and publish marketing collateral for ACAMP. Manage online presence including Website, Twitter, Events and mailouts.'
         },
         {
-            'employer': 'Tait Europe Ltd',
-            'title': 'Sales Process Manager',
-            'location': 'Huntingdon, UK',
-            'dates': '2007 - 2008',
-            'description': 'Manage opportunity, bid and contract review process. Develop and maintain sales tools for bids. Monitor opportunities on CRM tool and ensure its use. Design and produce reports on opportunity values and numbers to show sales manager’s performance. Support various senior management team meetings and presentations including annual and monthly review and forecast data.'
+            employer: 'Tait Europe Ltd',
+            title: 'Sales Process Manager',
+            location: 'Huntingdon, UK',
+            dates: '2007 - 2008',
+            description: 'Manage opportunity, bid and contract review process. Develop and maintain sales tools for bids. Monitor opportunities on CRM tool and ensure its use. Design and produce reports on opportunity values and numbers to show sales manager’s performance. Support various senior management team meetings and presentations including annual and monthly review and forecast data.'
         },
         {
-            'employer': 'NXT plc',
-            'title': 'Communications Coordinator',
-            'location': 'Huntingdon, UK',
-            'dates': '2005 - 2007',
-            'description': 'Create, implement and monitor news flow. Write copy, select and manipulate artwork for news releases and website. Generate and maintain content for website with ongoing updates of product, customer and technology databases. Responsible for all operational aspects of producing financial reports.'
+            employer: 'NXT plc',
+            title: 'Communications Coordinator',
+            location: 'Huntingdon, UK',
+            dates: '2005 - 2007',
+            description: 'Create, implement and monitor news flow. Write copy, select and manipulate artwork for news releases and website. Generate and maintain content for website with ongoing updates of product, customer and technology databases. Responsible for all operational aspects of producing financial reports.'
         },
         {
-            'employer': 'NXT plc',
-            'title': 'Senior Scientist',
-            'location': 'Huntingdon, UK',
-            'dates': '1997 - 2005',
-            'description': 'Started as Project Scientist and progressed through Research Scientist, Acoustic Engineer to Senior Scientist. Design, support and maintain NXT software products. Design, execute and report scientific experiments including psychoacoustic tests and analysis. Write and coordinate company product installation packages, help files and manuals. Provide technical assistance and training. Co-authored published technical acoustics papers. Windows application programming with Borland Delphi including: documentation, installation, program testing and test-data acquisition. Science group organisation, maintenance of department intranet pages.'
+            employer: 'NXT plc',
+            title: 'Senior Scientist',
+            location: 'Huntingdon, UK',
+            dates: '1997 - 2005',
+            description: 'Started as Project Scientist and progressed through Research Scientist, Acoustic Engineer to Senior Scientist. Design, support and maintain NXT software products. Design, execute and report scientific experiments including psychoacoustic tests and analysis. Write and coordinate company product installation packages, help files and manuals. Provide technical assistance and training. Co-authored published technical acoustics papers. Windows application programming with Borland Delphi including: documentation, installation, program testing and test-data acquisition. Science group organisation, maintenance of department intranet pages.'
         }
     ]
 };
@@ -144,61 +144,61 @@ work.display = function(){
 };
 
 var education = {
-    'schools': [
+    schools: [
         {
-            'name': 'University of Southamption',
-            'location': 'Southamption, UK',
-            'degree': 'BSc Hons Acoustics and Music',
-            'majors': [
+            name: 'University of Southamption',
+            location: 'Southamption, UK',
+            degree: 'BSc Hons Acoustics and Music',
+            majors: [
                 'Acoustics',
                 'Music'
             ],
-            'dates': '1997',
-            'url' : 'http://www.southampton.ac.uk/'
+            dates: '1997',
+            url : 'http://www.southampton.ac.uk/'
         }
     ],
-    'onlineCourses': [
+    onlineCourses: [
         {
-            'title': 'Front-End Web Developer Nanodegree',
-            'school': 'Udacity',
-            'date': '2015',
-            'url': 'https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001'
+            title: 'Front-End Web Developer Nanodegree',
+            school: 'Udacity',
+            date: '2015',
+            url: 'https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001'
         },
         {
-            'title': 'Intro to HTML and CSS',
-            'school': 'Udacity',
-            'date': '2015',
-            'url': 'https://www.udacity.com/course/ud304'
+            title: 'Intro to HTML and CSS',
+            school: 'Udacity',
+            date: '2015',
+            url: 'https://www.udacity.com/course/ud304'
         },
         {
-            'title': 'Responsive Web Design Fundamentals',
-            'school': 'Udacity',
-            'date': '2015',
-            'url': 'https://www.udacity.com/course/ud893'
+            title: 'Responsive Web Design Fundamentals',
+            school: 'Udacity',
+            date: '2015',
+            url: 'https://www.udacity.com/course/ud893'
         },
         {
-            'title': 'Responsive Images',
-            'school': 'Udacity',
-            'date': '2015',
-            'url': 'https://www.udacity.com/course/ud882'
+            title: 'Responsive Images',
+            school: 'Udacity',
+            date: '2015',
+            url: 'https://www.udacity.com/course/ud882'
         },
         {
-            'title': 'How to Use Git and GitHub',
-            'school': 'Udacity',
-            'date': '2015',
-            'url': 'https://www.udacity.com/course/ud775'
+            title: 'How to Use Git and GitHub',
+            school: 'Udacity',
+            date: '2015',
+            url: 'https://www.udacity.com/course/ud775'
         },
         {
-            'title': 'JavaScript Basics',
-            'school': 'Udacity',
-            'date': '2015',
-            'url': 'https://www.udacity.com/course/ud804'
+            title: 'JavaScript Basics',
+            school: 'Udacity',
+            date: '2015',
+            url: 'https://www.udacity.com/course/ud804'
         },
         {
-            'title': 'Intro to jQuery',
-            'school': 'Udacity',
-            'date': '2015',
-            'url': 'https://www.udacity.com/course/ud245'
+            title: 'Intro to jQuery',
+            school: 'Udacity',
+            date: '2015',
+            url: 'https://www.udacity.com/course/ud245'
         }
     ]
 };
@@ -249,24 +249,24 @@ education.display = function(){
 };
 
 var projects = {
-    'projects': [
+    projects: [
         {
-            'title': 'P0: About Me',
-            'dates': '2015',
-            'description': 'My first webpage using HTML and CSS',
-            'images': ['images/p0-about-me-1-small.jpg']
+            title: 'P0: About Me',
+            dates: '2015',
+            description: 'My first webpage using HTML and CSS',
+            images: ['images/p0-about-me-1-small.jpg']
         },
         {
-            'title': 'P1: Build a Portfolio Site',
-            'dates': '2015',
-            'description': 'A PDF design mockup replicated in HTML and CSS. A responsive website that displays images, descriptions and links to each of the portfolio projects that will be completed during the course of the Front-End Web Developer Nanodegree.',
-            'images': ['images/p1-portfolio-1-small.jpg', 'images/p1-portfolio-2-small.jpg']
+            title: 'P1: Build a Portfolio Site',
+            dates: '2015',
+            description: 'A PDF design mockup replicated in HTML and CSS. A responsive website that displays images, descriptions and links to each of the portfolio projects that will be completed during the course of the Front-End Web Developer Nanodegree.',
+            images: ['images/p1-portfolio-1-small.jpg', 'images/p1-portfolio-2-small.jpg']
         },
         {
-            'title': 'P2: Online Resume',
-            'dates': '2015',
-            'description': 'A work in progress! Stepping it up to include JavaScript',
-            'images': ['images/p2-resume-1-small.jpg', 'images/p2-resume-2-small.jpg']
+            title: 'P2: Online Resume',
+            dates: '2015',
+            description: 'A work in progress! Stepping it up to include JavaScript',
+            images: ['images/p2-resume-1-small.jpg', 'images/p2-resume-2-small.jpg']
         }
     ]
 };
@@ -300,6 +300,12 @@ projects.display = function(){
         }
     }
 };
+
+// jQuery plugin "Sticky" by Anthony Garand http://garand.me
+// to stick the nav bar to the top of the page
+ $(document).ready(function() {
+    $("#nav").sticky({topSpacing:0});
+ });
 
 bio.displayBio();
 bio.displaySkills();
