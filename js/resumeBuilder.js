@@ -56,16 +56,6 @@ bio.displayBio = function(){
     $('#header').append(formattedWelcomeMsg);
 };
 
-// *****************************
-
-// write if statement that checks if there are skills in bio object
-
-// if evaluates to true, .append() HTMLskillsStart to div with id=header
-
-// .append() the skills to the element with id=skills using HTMLskills to format each skill
-
-// change for-in loops to regular for loops as per style guide
-
 bio.displaySkills = function(){
     if (bio.skills.length > 0) {
         $('#header').append(HTMLskillsStart);
@@ -75,6 +65,7 @@ bio.displaySkills = function(){
         }
     }
 };
+
 
 var work = {
     jobs: [
@@ -108,24 +99,8 @@ var work = {
         }
     ]
 };
-// write for-in loop to iterate thru jobs in work object.
-// .append() HTMLworkStart element for each
-
-// format each employer with HTMLworkEmployer
-// format each job title with HTMLworkTitle
-
-// .append() concat of employer and title to the the element with
-// class work-entry:last
-
-// format and .append() all work details
-
-// encapsulate displayWork() function as a
-// display() function within the work object
-
-// change for-in loop to regular for loop as per style guide
 
 work.display = function(){
-//    for (var job in work.jobs){
     for (var job = 0; job < work.jobs.length; job++){
         $('#workExperience').append(HTMLworkStart);
 
@@ -142,6 +117,7 @@ work.display = function(){
         $('.work-entry:last').append(formattedWorkDesc);
     }
 };
+
 
 var education = {
     schools: [
@@ -203,12 +179,7 @@ var education = {
     ]
 };
 
-// encapsulate display() within the education object
-
-// change for-in loops to regular for loops as per style guide
-
 education.display = function(){
-    //for (var school in education.schools){
     for (var school = 0; school < education.schools.length; school++){
         $('#education').append(HTMLschoolStart);
 
@@ -231,7 +202,6 @@ education.display = function(){
     }
 
     $('#education').append(HTMLonlineClasses);
-    //for (var course in education.onlineCourses){
     for (var course = 0; course < education.onlineCourses.length; course++){
         $('#education').append(HTMLschoolStart);
 
@@ -247,6 +217,7 @@ education.display = function(){
         $('.education-entry:last').append(formattedOnlineURL);
     }
 };
+
 
 var projects = {
     projects: [
@@ -270,14 +241,6 @@ var projects = {
         }
     ]
 };
-
-// encapsulate display() within the projects object
-
-// projects.display() should .append() all project info to projects section
-
-// start each project with HTMLprojectStart
-
-// change for-in loops to regular for loops as per style guide
 
 projects.display = function(){
     for (var project = 0; project < projects.projects.length; project++){

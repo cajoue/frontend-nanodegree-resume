@@ -92,7 +92,6 @@ span {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    /*justify-content: space-around;*/
     padding: 10px;
 }
 
@@ -107,6 +106,7 @@ span {
 .bg-contrast {
     background-color: #484848;
 }
+
 .bg-tint {
     background-color: #f3f3f3;
     padding-bottom: 10px;
@@ -126,7 +126,6 @@ span {
     color: #fff;
 }
 
-
 /* navigation */
 
 /* TODO: Replace with image later */
@@ -143,11 +142,13 @@ span {
     padding: 5px 5px;
 }
 
-/* from awesome hashtag links with margin codepen by Kirk Gleffe http://codepen.io/kirkgleffe/pen/DfvuE found via https://css-tricks.com/hash-tag-links-padding/ */
+/* from awesome hashtag links with margin codepen by Kirk Gleffe
+http://codepen.io/kirkgleffe/pen/DfvuE
+found via https://css-tricks.com/hash-tag-links-padding/ */
 
 .xtarget:target {
-    -webkit-transition:.3s;
-    transition:.3s;
+    -webkit-transition: .3s;
+    transition: .3s;
     padding-top: 75px;
 }
 
@@ -159,6 +160,7 @@ span {
     color: #999;
     line-height: 29px;
     padding: 10px;
+    display: block;
 }
 
 .biopic {
@@ -241,10 +243,6 @@ span {
         margin-top: 10%;
     }
 
-    .role {
-        display: block;
-    }
-
     .welcome-message {
         display: none;
     }
@@ -269,12 +267,20 @@ span {
     .biopic {
         display: block;
     }
-    .flex-box {
-        justify-content: space-around;
+
+    .role {
+        display: inline-block;
+        float: right;
     }
+
+    .flex-box {
+        justify-content: space-between;
+    }
+
     .nav-item {
         padding: 5px 30px;
     }
+
     #mapDiv {
         height: 400px;
     }

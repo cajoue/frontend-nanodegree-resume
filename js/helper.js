@@ -84,12 +84,7 @@ function logClicks(x,y) {
     console.log('x location: ' + x + '; y location: ' + y);
 }
 
-// Collecting Click Locations - my solution
-// $(document).click(function(loc){
-//  logClicks(loc.pageX, loc.pageY);
-// })
-
-// Udacity solution
+// Collecting Click Locations
 $(document).click(function(loc) {
     var x = loc.pageX;
     var y = loc.pageY;
@@ -177,7 +172,7 @@ function initializeMap() {
                 '<h3>' + name + '</h3>' +
                 '<img src="http://lorempixel.com/250/150/city" alt="random city image">' +
                 '<p>Latitude: ' + lat +
-                '<br>Longitude: ' + lon + '</p>'
+                '<br>Longitude: ' + lon + '</p>' +
             '</div>';
 
         // infoWindows are the little helper windows that open when you click
