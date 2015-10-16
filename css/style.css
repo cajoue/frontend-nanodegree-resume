@@ -92,7 +92,7 @@ span {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    /*justify-content: space-around;*/
     padding: 10px;
 }
 
@@ -132,10 +132,15 @@ span {
 /* TODO: Replace with image later */
 .nav-main {
     background-color: #f3f3f3;
+    justify-content: space-around;
 }
 
 .nav-item {
-    color: #4a4a4a;
+    background: #f8981c;
+    border-radius: 10px;
+    color: #fff;
+    margin: 5px;
+    padding: 5px 5px;
 }
 
 /* from awesome hashtag links with margin codepen by Kirk Gleffe http://codepen.io/kirkgleffe/pen/DfvuE found via https://css-tricks.com/hash-tag-links-padding/ */
@@ -143,7 +148,7 @@ span {
 .xtarget:target {
     -webkit-transition:.3s;
     transition:.3s;
-    padding-top: 70px;
+    padding-top: 75px;
 }
 
 /* header */
@@ -218,9 +223,9 @@ span {
 }
 
 #mapDiv {
-    height: 400px;
+    height: 300px;
     width: 100%;
-    padding-bottom: 5%;
+    padding-bottom: 65px;
 }
 
 /* footer */
@@ -231,9 +236,47 @@ span {
 
 /* Media queries to handle various device widths */
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 500px) {
     #lets-connect {
-        margin-top: 5%;
+        margin-top: 10%;
+    }
+
+    .role {
+        display: block;
+    }
+
+    .welcome-message {
+        display: none;
+    }
+
+    #mapDiv {
+        padding-bottom: 65px;
+    }
+}
+
+@media only screen and (min-width: 500px) {
+    .biopic {
+        width: 150px;
+    }
+
+    #mapDiv {
+        padding-bottom: 5%;
+    }
+}
+
+@media only screen and (min-width: 750px) {
+    #skills-h3,
+    .biopic {
+        display: block;
+    }
+    .flex-box {
+        justify-content: space-around;
+    }
+    .nav-item {
+        padding: 5px 30px;
+    }
+    #mapDiv {
+        height: 400px;
     }
 }
 
@@ -243,23 +286,8 @@ span {
     }
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 1024px) {
     #lets-connect {
-        margin-top: 10%;
-    }
-
-    .biopic {
-        width: 150px;
-    }
-
-    .welcome-message {
-        display: none;
-    }
-}
-
-@media only screen and (min-width: 750px) {
-    #skills-h3,
-    .biopic {
-        display: block;
+        margin-top: 5%;
     }
 }

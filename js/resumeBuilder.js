@@ -41,11 +41,11 @@ bio.displayBio = function(){
     $('#topContacts').append(formattedTwitter);
 
     // footerContacts list
-    $('#footerContacts').append(formattedMobile);
-    $('#footerContacts').append(formattedEmail);
-    $('#footerContacts').append(formattedLocation);
+    //$('#footerContacts').append(formattedMobile);
+    //$('#footerContacts').append(formattedLocation);
     $('#footerContacts').append(formattedGithub);
     $('#footerContacts').append(formattedTwitter);
+    $('#footerContacts').append(formattedEmail);
 
     //image
     var formattedBioPic = HTMLbioPic.replace('%data%', bio.bioPic);
@@ -303,6 +303,7 @@ projects.display = function(){
 
 // jQuery plugin "Sticky" by Anthony Garand http://garand.me
 // to stick the nav bar to the top of the page
+
 $(document).ready(function() {
     $("#nav").sticky({topSpacing:0});
 });
