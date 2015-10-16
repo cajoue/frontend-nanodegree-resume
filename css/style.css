@@ -69,6 +69,8 @@ a {
     text-decoration: none;
     margin-top: 10px;
     display: block;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
 }
 
 ul {
@@ -134,6 +136,14 @@ span {
 
 .nav-item {
     color: #4a4a4a;
+}
+
+/* from awesome hashtag links with margin codepen by Kirk Gleffe http://codepen.io/kirkgleffe/pen/DfvuE found via https://css-tricks.com/hash-tag-links-padding/ */
+
+.xtarget:target {
+    -webkit-transition:.3s;
+    transition:.3s;
+    padding-top: 70px;
 }
 
 /* header */

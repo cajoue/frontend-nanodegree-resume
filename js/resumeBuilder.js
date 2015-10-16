@@ -303,9 +303,9 @@ projects.display = function(){
 
 // jQuery plugin "Sticky" by Anthony Garand http://garand.me
 // to stick the nav bar to the top of the page
- $(document).ready(function() {
+$(document).ready(function() {
     $("#nav").sticky({topSpacing:0});
- });
+});
 
 bio.displayBio();
 bio.displaySkills();
