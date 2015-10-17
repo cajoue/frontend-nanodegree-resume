@@ -142,7 +142,6 @@ function initializeMap() {
         for (var job in work.jobs) {
             locations.push(work.jobs[job].location);
         }
-
         return locations;
     }
 
