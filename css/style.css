@@ -314,6 +314,9 @@ found via https://css-tricks.com/hash-tag-links-padding/ */
     #skills-h3,
     .biopic {
         display: inline-block;
+    }
+
+    .biopic {
         width: 175px;
     }
 
