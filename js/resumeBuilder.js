@@ -19,7 +19,7 @@ var bio = {
     bioPic: 'images/vy_640x640.jpg',
 };
 
-bio.displayBio = function(){
+bio.display = function(){
     // header
     var formattedName = HTMLheaderName.replace('%data%', bio.name);
     var formattedRole = HTMLheaderRole.replace('%data%', bio.role);
@@ -41,11 +41,17 @@ bio.displayBio = function(){
     $('#topContacts').append(formattedTwitter);
 
     // footerContacts list
-    //$('#footerContacts').append(formattedMobile);
-    //$('#footerContacts').append(formattedLocation);
-    $('#footerContacts').append(formattedGithub);
-    $('#footerContacts').append(formattedTwitter);
-    $('#footerContacts').append(formattedEmail);
+    var formattedFooterMobile = formattedMobile.replace('accent', 'white');
+    var formattedFooterEmail = formattedEmail.replace('accent', 'white');
+    var formattedFooterGithub = formattedLocation.replace('accent', 'white');
+    var formattedFooterTwitter = formattedGithub.replace('accent', 'white');
+    var formattedFooterLocation = formattedTwitter.replace('accent', 'white');
+
+    $('#footerContacts').append(formattedFooterMobile);
+    $('#footerContacts').append(formattedFooterLocation);
+    $('#footerContacts').append(formattedFooterGithub);
+    $('#footerContacts').append(formattedFooterTwitter);
+    $('#footerContacts').append(formattedFooterEmail);
 
     //image
     var formattedBioPic = HTMLbioPic.replace('%data%', bio.bioPic);
@@ -54,9 +60,7 @@ bio.displayBio = function(){
     // welcome
     var formattedWelcomeMsg = HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage);
     $('#header').append(formattedWelcomeMsg);
-};
 
-bio.displaySkills = function(){
     if (bio.skills.length > 0) {
         $('#header').append(HTMLskillsStart);
         for (var skill = 0; skill < bio.skills.length; skill++){
@@ -65,7 +69,6 @@ bio.displaySkills = function(){
         }
     }
 };
-
 
 var work = {
     jobs: [
@@ -122,8 +125,8 @@ work.display = function(){
 var education = {
     schools: [
         {
-            name: 'University of Southamption',
-            location: 'Southamption, UK',
+            name: 'University of Southampton',
+            location: 'Southampton, UK',
             degree: 'BSc Hons Acoustics and Music',
             majors: [
                 'Acoustics',
@@ -271,8 +274,7 @@ $(document).ready(function() {
     $("#nav").sticky({topSpacing:0});
 });
 
-bio.displayBio();
-bio.displaySkills();
+bio.display();
 work.display();
 projects.display();
 education.display();
