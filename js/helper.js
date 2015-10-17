@@ -12,8 +12,8 @@ Cameron Pittman
 These are HTML strings. As part of the course, you'll be using JavaScript functions
 replace the %data% placeholder text you see in them.
 */
-var HTMLheaderName = '<h1 id="name">%data%</h1>';
-var HTMLheaderRole = '<span class="role">%data%</span><hr>';
+var HTMLheaderName = '<div class="header-name"><h1 id="name">%data%</h1></div>';
+var HTMLheaderRole = '<div class="header-role">%data%</div>';
 
 var HTMLcontactGeneric = '<li class="flex-item"><span class="text-contrast">%contact%</span><span class="text-accent">%data%</span></li>';
 var HTMLmobile = '<li class="flex-item"><span class="text-contrast">mobile</span><span class="text-accent">%data%</span></li>';
@@ -161,15 +161,16 @@ function initializeMap() {
         // marker is an object with additional data about the pin for a single location
         var marker = new google.maps.Marker({
             map: map,
-            position: placeData.geometry.location,
-            title: name
+            title: name,
+            position: placeData.geometry.location
         });
 
         // TODO: Get location specific detail for each place (image and url perhaps)
+        // Removed placeholder image in windowContent
+        // Will create new branch to work on this - probably won't make the next review
 
         var windowContent = '<div class = "placeInfo">' +
                 '<h3>' + name + '</h3>' +
-                '<img src="http://lorempixel.com/250/150/city" alt="random city image">' +
                 '<p>Latitude: ' + lat +
                 '<br>Longitude: ' + lon + '</p>' +
             '</div>';
@@ -179,7 +180,7 @@ function initializeMap() {
         // about a location.
         var infoWindow = new google.maps.InfoWindow({
             content: windowContent,
-            maxWidth: 300
+            maxWidth: 250
         });
 
         // hmmmm, I wonder what this is about...
@@ -254,5 +255,5 @@ window.addEventListener('load', initializeMap);
 //and adjust map bounds
 window.addEventListener('resize', function(e) {
 //  Make sure the map bounds get updated on page resize
- map.fitBounds(mapBounds);
+    map.fitBounds(mapBounds);
 });
