@@ -8,13 +8,20 @@ var bio = {
         twitter: '@example',
         location: 'Orbe, Switzerland'
     },
-    welcomeMessage: "Salut!",
+    welcomeMessage: "Front-end web developer with marketing communications experience in start-up, not-for-profit and established operations. Experience includes management of high profile websites. Committed to keeping up with latest web developments, recent projects use advancements in HTML5, JavaScript and responsive design to render websites that provide exceptional user experience.",
     skills: [
         'HTML5',
         'CSS3',
-        'Responsive Web Design',
         'JavaScript',
-        'jQuery'
+        'jQuery',
+        'Bootstrap',
+        'Gulp',
+        'GitHub',
+        'Responsive web design',
+        'KnockoutJS MVVM framework',
+        'Jasmine testing framework',
+        'Illustrator',
+        'InDesign'
     ],
     bioPic: 'images/vy_640x640.jpg',
 };
@@ -38,7 +45,7 @@ bio.display = function(){
     $('#topContacts').append(formattedEmail);
     $('#topContacts').append(formattedLocation);
     $('#topContacts').append(formattedGithub);
-    $('#topContacts').append(formattedTwitter);
+    // $('#topContacts').append(formattedTwitter);
 
     // footerContacts list
     var formattedFooterMobile = formattedMobile.replace('accent', 'white');
@@ -77,28 +84,28 @@ var work = {
             title: 'Executive Assistant, AR Clerk and MARCOM Manager',
             location: 'Edmonton, AB',
             dates: '2008 - 2015',
-            description: 'Perform a wide variety of executive secretarial and administrative duties as required by daily operations in ACAMP. Maintain, verify and record systematic accounts receivable records of business transactions. Calculate, prepare and process accounts receivable invoices and other financial records. Write, review and publish marketing collateral for ACAMP. Manage online presence including Website, Twitter, Events and mailouts.'
+            description: 'Managed creation of, and maintained, 5 websites for not-for-profit company. Created, wrote and implemented marketing collateral (online and hard copy) to support seminar events that brought together more than 100 entrepreneurs and tech leaders each quarter. Worked together with business team and outside agencies to create sites that informed local clients, drew new business and attracted over 400 international delegates to two conferences.'
         },
         {
             employer: 'Tait Europe Ltd',
             title: 'Sales Process Manager',
             location: 'Huntingdon, UK',
             dates: '2007 - 2008',
-            description: 'Manage opportunity, bid and contract review process. Develop and maintain sales tools for bids. Monitor opportunities on CRM tool and ensure its use. Design and produce reports on opportunity values and numbers to show sales manager’s performance. Support various senior management team meetings and presentations including annual and monthly review and forecast data.'
+            description: 'Managed opportunity, bid and contract review process. Developed and maintained sales tools for bids. Monitored opportunities on CRM tool and ensured its use. Designed and produced reports on opportunity values and numbers to show sales manager’s performance. Supported various senior management team meetings and presentations including annual and monthly review and forecast data.'
         },
         {
             employer: 'NXT plc',
             title: 'Communications Coordinator',
             location: 'Huntingdon, UK',
             dates: '2005 - 2007',
-            description: 'Create, implement and monitor news flow. Write copy, select and manipulate artwork for news releases and website. Generate and maintain content for website with ongoing updates of product, customer and technology databases. Responsible for all operational aspects of producing financial reports.'
+            description: 'Created, implemented and monitored news flow. Wrote copy, selected and manipulated artwork for news releases and website. Generated and maintained content for website with ongoing updates of product, customer and technology databases. Responsible for all operational aspects of producing financial reports.'
         },
         {
             employer: 'NXT plc',
             title: 'Senior Scientist',
             location: 'Huntingdon, UK',
             dates: '1997 - 2005',
-            description: 'Started as Project Scientist and progressed through Research Scientist, Acoustic Engineer to Senior Scientist. Design, support and maintain NXT software products. Design, execute and report scientific experiments including psychoacoustic tests and analysis. Write and coordinate company product installation packages, help files and manuals. Provide technical assistance and training. Co-authored published technical acoustics papers. Windows application programming with Borland Delphi including: documentation, installation, program testing and test-data acquisition. Science group organisation, maintenance of department intranet pages.'
+            description: 'Started as Project Scientist and progressed through Research Scientist, Acoustic Engineer to Senior Scientist. Designed, supported and maintained NXT software products. Designed, executed and reported scientific experiments including psychoacoustic tests and analysis. Wrote and coordinated company product installation packages, help files and manuals. Provided technical assistance and training. Co-authored published technical acoustics papers. Windows application programming with Borland Delphi included: documentation, installation, program testing and test-data acquisition. Science group organisation, maintenance of department intranet pages.'
         }
     ]
 };
@@ -140,44 +147,44 @@ var education = {
         {
             title: 'Front-End Web Developer Nanodegree',
             school: 'Udacity',
-            date: '2015',
+            date: '2015 - 2016',
             url: 'https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001'
-        },
-        {
-            title: 'Intro to HTML and CSS',
-            school: 'Udacity',
-            date: '2015',
-            url: 'https://www.udacity.com/course/ud304'
         },
         {
             title: 'Responsive Web Design Fundamentals',
             school: 'Udacity',
             date: '2015',
-            url: 'https://www.udacity.com/course/ud893'
+            url: 'https://www.udacity.com/course/responsive-web-design-fundamentals--ud893'
         },
         {
-            title: 'Responsive Images',
+            title: 'HTML5 Canvas',
             school: 'Udacity',
             date: '2015',
-            url: 'https://www.udacity.com/course/ud882'
+            url: 'https://www.udacity.com/course/html5-canvas--ud292'
         },
         {
-            title: 'How to Use Git and GitHub',
+            title: 'Object-Oriented JavaScript',
             school: 'Udacity',
             date: '2015',
-            url: 'https://www.udacity.com/course/ud775'
+            url: 'https://www.udacity.com/course/object-oriented-javascript--ud015'
         },
         {
-            title: 'JavaScript Basics',
+            title: 'Browser Rendering Optimization',
             school: 'Udacity',
-            date: '2015',
-            url: 'https://www.udacity.com/course/ud804'
+            date: '2016',
+            url: 'https://www.udacity.com/course/browser-rendering-optimization--ud860'
         },
         {
-            title: 'Intro to jQuery',
+            title: 'JavaScript Design Patterns',
             school: 'Udacity',
-            date: '2015',
-            url: 'https://www.udacity.com/course/ud245'
+            date: '2016',
+            url: 'https://www.udacity.com/course/javascript-design-patterns--ud989'
+        },
+        {
+            title: 'JavaScript Testing',
+            school: 'Udacity',
+            date: '2016',
+            url: 'https://www.udacity.com/course/javascript-testing--ud549'
         }
     ]
 };
@@ -225,22 +232,46 @@ education.display = function(){
 var projects = {
     projects: [
         {
-            title: 'P0: About Me',
-            dates: '2015',
-            description: 'My first webpage using HTML and CSS',
-            images: ['images/p0-about-me-1-small.jpg']
+            title: 'Feed Reader Testing',
+            dates: '2016',
+            description: "Wrote comprehensive unit tests, using the Jasmine testing framework, for an RSS Feed Reader application that uses Google's RSS API.",
+            images: ['images/jasmine-tests.jpg'],
+            url: 'https://github.com/cajoue/frontend-nanodegree-feedreader'
         },
         {
-            title: 'P1: Build a Portfolio Site',
-            dates: '2015',
-            description: 'A PDF design mockup replicated in HTML and CSS. A responsive website that displays images, descriptions and links to each of the portfolio projects that will be completed during the course of the Front-End Web Developer Nanodegree.',
-            images: ['images/p1-portfolio-1-small.jpg', 'images/p1-portfolio-2-small.jpg']
+            title: 'Neighbourhood Map',
+            dates: '2016',
+            description: 'A single-page web application, built using the Knockout framework. It displays a Google Map with points of interest. Calls Foursquare and Robohash APIs.',
+            images: ['images/neighbourhood-map.jpg'],
+            url: 'http://cajoue.github.io/frontend-nanodegree-neighbourhood-map/'
         },
         {
-            title: 'P2: Online Resume',
+            title: 'Website Performance',
+            dates: '2016',
+            description: "Optimized a slow web application's JavaScript, CSS and assets delivery, ensuring it runs at 60fps and achieves a PageSpeed score of at least 90.",
+            images: ['images/optimisation.jpg'],
+            url: 'http://cajoue.github.io/frontend-nanodegree-mobile-portfolio'
+        },
+        {
+            title: 'Arcade Game Clone',
             dates: '2015',
-            description: 'A work in progress! Stepping it up to include JavaScript',
-            images: ['images/p2-resume-1-small.jpg', 'images/p2-resume-2-small.jpg']
+            description: 'An HTML5 Canvas powered video game, developed using Object Oriented JavaScript. Clone of the classic game, Frogger.',
+            images: ['images/arcade-game.jpg'],
+            url: 'http://cajoue.github.io/frontend-nanodegree-arcade-game'
+        },
+        {
+            title: 'Interactive Resume',
+            dates: '2015',
+            description: 'An interactive resume application using jQuery that reads all data from a JSON file and dynamically modifies the DOM to display the information.',
+            images: ['images/resume.jpg', 'images/p2-resume-2-small.jpg'],
+            url: 'http://cajoue.github.io/frontend-nanodegree-resume/'
+        },
+        {
+            title: 'Simple Portfolio Page',
+            dates: '2015',
+            description: 'A PDF design mockup replicated in HTML and CSS. A responsive website that displays images, descriptions and links to each of the portfolio projects completed during the course of the Front-End Web Developer Nanodegree.',
+            images: ['images/p1-portfolio-1-small.jpg', 'images/p1-portfolio-2-small.jpg'],
+            url: 'http://cajoue.github.io/U-P1-Portfolio/'
         }
     ]
 };
