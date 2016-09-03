@@ -270,7 +270,7 @@ var projects = {
             title: 'Simple Portfolio Page',
             dates: '2015',
             description: 'A PDF design mockup replicated in HTML and CSS. A responsive website that displays images, descriptions and links to each of the portfolio projects completed during the course of the Front-End Web Developer Nanodegree.',
-            images: ['images/p1-portfolio-1-small.jpg', 'images/p1-portfolio-2-small.jpg'],
+            images: ['images/simple-portfolio.jpg', 'images/p1-portfolio-2-small.jpg'],
             url: 'http://cajoue.github.io/U-P1-Portfolio/'
         }
     ]
